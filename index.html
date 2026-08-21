@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="共情能力测试：通过 IRI-C 量表了解自己的观点采择、想象、共情关注与个人忧伤。"
+    />
+    <meta name="theme-color" content="#f6efe7" />
+    <title>共情能力测试｜IRI-C</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><text y=%2252%22 x=%2250%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-size=%2248%22 fill=%22%23db6f59%22>♥</text></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="共情能力测试首页">
+          <span class="brand-mark" aria-hidden="true">心</span>
+          <span>共情小测</span>
+        </a>
+        <button class="text-button hidden" id="restartHeaderButton" type="button">重新测试</button>
+      </header>
+
+      <main>
+        <section class="screen intro-screen is-active" id="introScreen" aria-labelledby="introTitle">
+          <div class="intro-copy">
+            <p class="eyebrow">EMPATHY CHECK-IN</p>
+            <h1 id="introTitle">你有多懂得，<br /><em>感受他人的世界？</em></h1>
+            <p class="intro-lead">
+              22 道情境题，从换位思考、情感代入、关怀反应和压力感受四个角度，描绘你的共情方式。
+            </p>
+
+            <div class="intro-meta" aria-label="测试信息">
+              <span>22 道题</span>
+              <span>约 3 分钟</span>
+              <span>进度自动保存</span>
+            </div>
+
+            <button class="primary-button" id="startButton" type="button">
+              <span id="startButtonText">开始测试</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="privacy-note">答案只保存在你的浏览器中，不会上传。</p>
+          </div>
+
+          <div class="intro-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="heart-card">
+              <span class="heart-small">♡</span>
+              <span class="heart-large">♥</span>
+              <p>听见别人<br />也读懂自己</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen quiz-screen" id="quizScreen" aria-labelledby="questionText">
+          <div class="quiz-topline">
+            <button class="back-button" id="backButton" type="button" aria-label="返回上一题">←</button>
+            <div class="progress-copy">
+              <span id="progressLabel">问题 1 / 22</span>
+              <span id="progressPercent">5%</span>
+            </div>
+          </div>
+
+          <div
+            class="progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="22"
+            aria-valuenow="1"
+          >
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <article class="question-card">
+            <p class="question-kicker">请选择最接近你真实感受的一项</p>
+            <h2 id="questionText"></h2>
+            <div class="options" id="options" role="radiogroup" aria-labelledby="questionText"></div>
+            <p class="keyboard-hint">也可以按数字键 1～5 快速选择</p>
+          </article>
+        </section>
+
+        <section class="screen result-screen" id="resultScreen" aria-labelledby="resultTitle">
+          <div class="result-heading">
+            <p class="eyebrow">YOUR RESULT</p>
+            <h1 id="resultTitle">你的共情画像</h1>
+          </div>
+
+          <div class="result-grid">
+            <article class="score-card">
+              <div class="score-ring" id="scoreRing">
+                <div>
+                  <strong id="scoreValue">0</strong>
+                  <span>共情综合指数</span>
+                </div>
+              </div>
+              <p class="result-level" id="resultLevel"></p>
+              <p class="result-summary" id="resultSummary"></p>
+            </article>
+
+            <article class="insight-card">
+              <p class="card-label">你的共情方式</p>
+              <h2 id="insightTitle"></h2>
+              <p id="insightBody"></p>
+              <div class="dimension-list" id="dimensionList"></div>
+            </article>
+          </div>
+
+          <article class="advice-card">
+            <p class="card-label">给你的提醒</p>
+            <p id="adviceText"></p>
+          </article>
+
+          <div class="result-actions">
+            <button class="primary-button" id="retryButton" type="button">重新测试</button>
+            <button class="secondary-button" id="copyButton" type="button">复制结果</button>
+          </div>
+
+          <p class="disclaimer">
+            本测试依据中文版人际反应指针量表（IRI-C）呈现，用于自我观察与交流，不构成心理诊断。
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
