@@ -334,8 +334,7 @@ button {
 
 .question-card h2 {
   max-width: 650px;
-  min-height: 106px;
-  margin: 0 0 34px;
+  margin: 0 0 22px;
   font-family: "Songti SC", "STSong", serif;
   font-size: clamp(28px, 4.2vw, 42px);
   font-weight: 600;
@@ -390,12 +389,6 @@ button {
   border-color: var(--coral);
   color: white;
   background: var(--coral);
-}
-
-.option-button small {
-  margin-left: 4px;
-  color: var(--muted);
-  font-size: 12px;
 }
 
 .keyboard-hint {
@@ -634,7 +627,6 @@ button {
   }
 
   .question-card h2 {
-    min-height: 120px;
     font-size: 29px;
   }
 
@@ -672,7 +664,7 @@ button {
   }
 
   .question-card h2 {
-    min-height: 146px;
+    margin-bottom: 18px;
     font-size: 26px;
   }
 

@@ -154,7 +154,7 @@ function renderQuestion() {
     button.className = `option-button${isSelected ? " is-selected" : ""}`;
     button.setAttribute("role", "radio");
     button.setAttribute("aria-checked", String(isSelected));
-    button.innerHTML = `<span class="option-number">${index + 1}</span><span>${choice.label}<small>（${choice.value}）</small></span>`;
+    button.innerHTML = `<span class="option-number">${index + 1}</span><span>${choice.label}</span>`;
     button.addEventListener("click", () => selectAnswer(choice.value));
     elements.options.append(button);
   });
