@@ -4,7 +4,9 @@
 <script>
 (function () {
   var prefix = "/empathy-quiz";
-  if (location.pathname === prefix || location.pathname.indexOf(prefix + "/") === 0) {
+  if (location.pathname === prefix) {
+    location.replace(prefix + "/" + location.search + location.hash);
+  } else if (location.pathname.indexOf(prefix + "/") === 0) {
     var base = document.createElement("base");
     base.href = prefix + "/";
     document.head.appendChild(base);
